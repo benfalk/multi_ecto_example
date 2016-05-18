@@ -1,0 +1,11 @@
+database:
+  image: postgres
+  expose:
+    - "5432"
+app:
+  image: benfalk/phoenix-elixir
+  command: bash
+  volumes:
+    - .:/code
+  links:
+    - database:database.local
